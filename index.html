@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mijoté – French stews simmered 24 hours, $24</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2EADB;      /* linen */
+  --ink:#1B2A49;     /* navy */
+  --soft:#5E6781;
+  --accent:#7B1E2B;  /* bordeaux */
+  --accent-ink:#F2EADB;
+  --line:rgba(27,42,73,.22);
+  --logo-bg:#1B2A49;--logo-fg:#F2EADB;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#141C30;--ink:#F2EADB;--soft:#A9AFC0;--accent:#7B1E2B;--accent-ink:#F2EADB;--line:rgba(242,234,219,.22);--logo-bg:#F2EADB;--logo-fg:#141C30;
+  }
+}
+:root[data-theme="dark"]{--bg:#141C30;--ink:#F2EADB;--soft:#A9AFC0;--accent:#7B1E2B;--accent-ink:#F2EADB;--line:rgba(242,234,219,.22);--logo-bg:#F2EADB;--logo-fg:#141C30;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:1.05rem;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+h1,h2,h3,.logo-text,.price b,.price span,.step b{font-family:Fraunces,Georgia,"Times New Roman",serif}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+header .brand{display:flex;align-items:center;gap:12px;font-family:Fraunces,Georgia,serif;font-weight:800;font-size:1.5rem;letter-spacing:-.01em}
+header .brand svg{width:44px;height:44px}
+header span.loc{font-size:.95rem;color:var(--soft)}
+
+.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(24px,5vw,64px);align-items:center;padding:clamp(28px,6vw,72px) 0 clamp(40px,6vw,72px)}
+.hero h1{font-weight:800;font-size:clamp(2.8rem,8.2vw,6.6rem);line-height:.95;letter-spacing:-.035em}
+.hero p{margin-top:clamp(20px,3vw,32px);max-width:30ch;font-size:clamp(1.15rem,2vw,1.4rem);line-height:1.4}
+.hero .badge{width:100%;max-width:340px;justify-self:center;display:block}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.step{padding:22px 20px 22px 0;display:flex;flex-direction:column;gap:2px}
+.step+.step{padding-left:20px;border-left:1px solid var(--line)}
+.step b{font-weight:600;font-size:clamp(1.3rem,2.6vw,1.9rem);letter-spacing:-.02em;line-height:1.1}
+.step span{color:var(--soft);font-size:.98rem}
+.step.last b{color:var(--accent)}
+:root[data-theme="dark"] .step.last b{color:#D9808B}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .step.last b{color:#D9808B}}
+
+section{padding:clamp(40px,7vw,80px) 0}
+.grid{display:grid;grid-template-columns:1fr 1.7fr;gap:clamp(24px,6vw,72px)}
+.grid h2{font-weight:600;font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.05;letter-spacing:-.02em}
+.grid h2 small{display:block;margin-top:12px;font-family:"DM Sans",system-ui,sans-serif;font-weight:400;font-size:1rem;color:var(--soft);letter-spacing:0}
+.rule{border:0;border-top:1px solid var(--line)}
+
+ol,ul{list-style:none;padding:0}
+.mains li{display:grid;grid-template-columns:2.2rem 1fr;padding:22px 0;border-top:1px solid var(--line)}
+.mains li:last-child{border-bottom:1px solid var(--line)}
+.n{font-family:Fraunces,Georgia,serif;font-size:1rem;color:var(--accent);padding-top:.55em;font-weight:600}
+:root[data-theme="dark"] .n{color:#D9808B}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .n{color:#D9808B}}
+.mains h3{font-weight:600;font-size:clamp(1.55rem,3vw,2.2rem);line-height:1.1;letter-spacing:-.02em}
+.mains p{color:var(--soft);margin-top:4px}
+
+.sides{display:flex;flex-wrap:wrap;gap:12px}
+.sides li{border:1.5px solid var(--ink);padding:11px 20px;border-radius:999px;font-weight:500}
+
+.band{background:var(--accent);color:var(--accent-ink)}
+.price{display:flex;flex-wrap:wrap;align-items:center;gap:12px 36px;padding:clamp(40px,7vw,72px) 0}
+.price b{font-weight:800;font-size:clamp(5rem,18vw,12rem);line-height:.82;letter-spacing:-.05em}
+.price span{font-size:clamp(1.3rem,2.6vw,2rem);line-height:1.2;max-width:18ch}
+
+footer{padding:28px 0 44px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;color:var(--soft);font-size:.95rem}
+
+@media (max-width:720px){
+  .grid,.hero{grid-template-columns:1fr}
+  .hero .badge{max-width:240px;justify-self:start;order:-1}
+  .steps{grid-template-columns:1fr}
+  .step,.step+.step{padding:16px 0;border-left:0}
+  .step+.step{border-top:1px solid var(--line)}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 240 240">
+    <circle cx="120" cy="120" r="118" fill="var(--logo-bg)"/>
+    <circle cx="120" cy="120" r="108" fill="none" stroke="var(--logo-fg)" stroke-width="1" opacity=".45"/>
+    <g fill="none" stroke="var(--logo-fg)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M106 62q-6-8 0-15t0-15M120 60q-6-8 0-15t0-15M134 62q-6-8 0-15t0-15" stroke-width="2.5" opacity=".8"/>
+      <rect x="111" y="70" width="18" height="10" rx="5"/>
+      <path d="M72 98Q120 64 168 98"/>
+      <rect x="64" y="98" width="112" height="9" rx="4.5"/>
+      <path d="M70 107l4 40q1 10 16 10h60q15 0 16-10l4-40"/>
+      <path d="M70 117H58q-7 0-7 7t7 7h14M170 117h12q7 0 7 7t-7 7h-14"/>
+    </g>
+    <text class="logo-text" x="120" y="198" text-anchor="middle" font-size="31" font-weight="800" letter-spacing="3" fill="var(--logo-fg)" style="font-family:Fraunces,Georgia,serif">MIJOTÉ</text>
+  </symbol>
+</svg>
+
+<div class="wrap">
+  <header>
+    <div class="brand"><svg role="img" aria-label="Mijoté logo"><use href="#logo"/></svg>Mijoté</div>
+    <span class="loc">New York</span>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>French stews, simmered 24 hours.</h1>
+      <p>One mijoté, one side, one price. That’s the whole menu.</p>
+    </div>
+    <svg class="badge" viewBox="0 0 240 240" role="img" aria-label="Mijoté logo"><use href="#logo"/></svg>
+  </div>
+
+  <div class="steps">
+    <div class="step"><b>Pick your mijoté</b><span>Five stews, slow-cooked for 24 hours</span></div>
+    <div class="step"><b>Pick a side</b><span>Five ways to mop up the sauce</span></div>
+    <div class="step last"><b>$24</b><span>That’s it. Tax and tip aside</span></div>
+  </div>
+
+  <section class="grid" id="menu">
+    <h2>Pick your mijoté<small>Slow-cooked for 24 hours.</small></h2>
+    <ol class="mains">
+      <li><span class="n">1</span><div><h3>Beef Bourguignon</h3><p>Beef, lardons, carrots, mushrooms, red wine</p></div></li>
+      <li><span class="n">2</span><div><h3>Chicken au Vin</h3><p>Thighs, confit garlic, Dijon, white wine</p></div></li>
+      <li><span class="n">3</span><div><h3>Pork Shoulder</h3><p>Cream, honey, mustard, parsley &amp; garlic</p></div></li>
+      <li><span class="n">4</span><div><h3>Lamb Tagine</h3><p>Shoulder, soft prunes, almonds, warm spices</p></div></li>
+      <li><span class="n">5</span><div><h3>Chicken Blanquette</h3><p>Chicken, mushrooms, carrots, silky white sauce</p></div></li>
+    </ol>
+  </section>
+
+  <hr class="rule">
+
+  <section class="grid">
+    <h2>Pick a side</h2>
+    <ul class="sides">
+      <li>Potato Purée</li>
+      <li>Buttered Pasta</li>
+      <li>Steamed Rice</li>
+      <li>Crispy Potatoes</li>
+      <li>Green Beans</li>
+    </ul>
+  </section>
+</div>
+
+<div class="band">
+  <div class="wrap">
+    <div class="price">
+      <b>$24</b>
+      <span>One mijoté and one side. Every plate, every night.</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <footer>
+    <span>Mijoté, New York</span>
+    <span>Address and hours to come</span>
+  </footer>
+</div>
+</body>
+</html>
